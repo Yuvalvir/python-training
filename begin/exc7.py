@@ -1,4 +1,4 @@
-if "__main__"==__name__:
+if "__main__" == __name__:
     # !/usr/bin/python -tt
     # Copyright 2010 Google Inc.
     # Licensed under the Apache License, Version 2.0
@@ -25,10 +25,11 @@ if "__main__"==__name__:
     # and donuts(23) returns 'Number of donuts: many'
 
     def donuts(count):
-        str="Number of donuts: "+count
-        if(count>=10):
-            str="Number of donuts: many "
+        str = "Number of donuts: " + count
+        if (count >= 10):
+            str = "Number of donuts: many "
         return str
+
 
     # B. both_ends
     # Given a string s, return a string made of the first 2
@@ -37,12 +38,12 @@ if "__main__"==__name__:
     # is less than 2, return instead the empty string.
 
     def both_ends(s):
-        string=""
-        if(len(s)<2):
+        string = ""
+        if (len(s) < 2):
             return string
-        first=s[:3:1]
-        second=s[-1:-3]
-        string=first+second
+        first = s[:3:1]
+        second = s[-1:-3]
+        string = first + second
         return string
 
 
@@ -56,10 +57,11 @@ if "__main__"==__name__:
     # Hint: s.replace(stra, strb) returns a version of string s
     # where all instances of stra have been replaced by strb.
     def fix_start(s):
-        firstch=s[0:1:1]
-        news=s.replace('firstch','*')
-        return news
-
+        firstch = s[0]
+        news = s[1::]
+        news = news.replace('firstch', '*')
+        news2 = firstch + news
+        return news2
 
     # D. MixUp
     # Given strings a and b, return a single string with a and b separated
@@ -69,11 +71,12 @@ if "__main__"==__name__:
     #   'dog', 'dinner' -> 'dig donner'
     # Assume a and b are length 2 or more.
 
-    def mix_up(a, b):
-        """ your docstring here """
-        # +++your code here+++
-        return
+    def mix_up(a,b):
+        afirst2 = a[:2:]
+        bfirst2 = b[:2:]
 
+
+        return
 
     # E. verbing
     # Given a string, if its length is at least 3,
@@ -82,13 +85,9 @@ if "__main__"==__name__:
     # add 'ly' instead.
     # If the string length is less than 3, leave it unchanged.
     # Return the resulting string.
-
     def verbing(s):
-        """ your docstring here """
-        # +++your code here+++
+        end
         return
-
-
     # F. not_bad
     # Given a string, find the first appearance of the
     # substring 'not' and 'bad'. If the 'bad' follows
@@ -97,13 +96,9 @@ if "__main__"==__name__:
     # Return the resulting string.
     # So 'This dinner is not that bad!' yields:
     # This dinner is good!
-
     def not_bad(s):
-        """ your docstring here """
-        # +++your code here+++
+
         return
-
-
     # G. front_back
     # Consider dividing a string into two halves.
     # If the length is even, the front and back halves are the same length.
@@ -111,24 +106,17 @@ if "__main__"==__name__:
     # e.g. 'abcde', the front half is 'abc', the back half 'de'.
     # Given 2 strings, a and b, return a string of the form
     #  a-front + b-front + a-back + b-back
-
     def front_back(a, b):
-        """ your docstring here """
-        # +++your code here+++
+
         return
-
-
     # Provided simple test() function used in main() to print
     # what each function returns vs. what it's supposed to return.
-
     def test(got, expected):
         if got == expected:
             prefix = ' OK '
         else:
             prefix = '  X '
         print '%s got: %s expected: %s' % (prefix, repr(got), repr(expected))
-
-
     # Provided main() calls the above functions with interesting inputs,
     # using test() to check if each result is correct or not.
     def main():
@@ -138,47 +126,39 @@ if "__main__"==__name__:
         test(donuts(9), 'Number of donuts: 9')
         test(donuts(10), 'Number of donuts: many')
         test(donuts(99), 'Number of donuts: many')
-
         print
         print 'both_ends'
         test(both_ends('spring'), 'spng')
         test(both_ends('Hello'), 'Helo')
         test(both_ends('a'), '')
         test(both_ends('xyz'), 'xyyz')
-
         print
         print 'fix_start'
         test(fix_start('babble'), 'ba**le')
         test(fix_start('aardvark'), 'a*rdv*rk')
         test(fix_start('google'), 'goo*le')
         test(fix_start('donut'), 'donut')
-
         print
         print 'mix_up'
         test(mix_up('mix', 'pod'), 'pox mid')
         test(mix_up('dog', 'dinner'), 'dig donner')
         test(mix_up('gnash', 'sport'), 'spash gnort')
         test(mix_up('pezzy', 'firm'), 'fizzy perm')
-
         print 'verbing'
         test(verbing('hail'), 'hailing')
         test(verbing('swiming'), 'swimingly')
         test(verbing('do'), 'do')
-
         print
         print 'not_bad'
         test(not_bad('This movie is not so bad'), 'This movie is good')
         test(not_bad('This dinner is not that bad!'), 'This dinner is good!')
         test(not_bad('This tea is not hot'), 'This tea is not hot')
         test(not_bad("It's bad yet not"), "It's bad yet not")
-
         print
         print 'front_back'
         test(front_back('abcd', 'xy'), 'abxcdy')
         test(front_back('abcde', 'xyz'), 'abcxydez')
         test(front_back('Kitten', 'Donut'), 'KitDontenut')
-
-
     # Standard boilerplate to call the main() function.
     if __name__ == '__main__':
         main()
